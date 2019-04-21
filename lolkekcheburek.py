@@ -58,7 +58,7 @@ f1 = pygame.font.Font(None, 36)
 f2 = pygame.font.Font(None, 70)
 
 size = [screen_width, screen_height]
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
 pygame.display.set_caption("IN PROGRESS")
 
@@ -236,9 +236,7 @@ while not flag:
     clock.tick(60)
 
 
-
-menuMusic.stop()
-flag = False
+flag = True
 while not flag:
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
@@ -423,7 +421,6 @@ while not flag:
                         elif levels[level][i.y][i.x] == 4:
                             i.x -= 1
                         elif levels[level][i.y][i.x] == 10:
-                            print("1")
                             if level == 0:
                                 levelIsDone = True
                             else:
@@ -444,7 +441,6 @@ while not flag:
                         elif levels[level][i.y][i.x] == 8:
                             i.x -= 1
                         elif levels[level][i.y][i.x] == 15:
-                            print("2")
                             levelsIsDone[1] = True
                     i.draw()
 
